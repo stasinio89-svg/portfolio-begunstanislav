@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфель Станислава Бегуна - Project Manager / Digital Marketing Manager с бэкграундом в маркетинговой аналитике">
+    <meta name="keywords" content="Project Manager, Digital Marketing Manager, маркетинг-аналитика, SaaS, Москва">
+    <title>Станислав Бегун - Project Manager Portfolio</title>
+    <style>
+        :root {
+            --color-bg-primary: #faf9f7;
+            --color-bg-secondary: #f3f1ee;
+            --color-text-primary: #2a2a2a;
+            --color-text-secondary: #6b7280;
+            --color-accent-primary: #4a7c8c;
+            --color-accent-secondary: #6b9ba8;
+            --color-border: #e5e2df;
+            --color-success: #52a396;
+            --color-white: #ffffff;
+            --font-family-sans: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-family-serif: 'Georgia', serif;
+            --duration: 0.3s;
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-sans);
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(250, 249, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            animation: slideDown 0.4s var(--ease);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--color-accent-primary);
+            text-decoration: none;
+            transition: color var(--duration) var(--ease);
+        }
+
+        .logo:hover {
+            color: var(--color-accent-secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color var(--duration) var(--ease);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent-primary);
+            transition: width var(--duration) var(--ease);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 5%;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            animation: fadeIn 0.6s var(--ease) 0.2s backwards;
+            flex-direction: row-reverse;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .hero-photo {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            aspect-ratio: 1;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 0.95rem;
+            box-shadow: 0 20px 40px rgba(74, 124, 140, 0.15);
+            transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+        }
+
+        .hero-photo:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(74, 124, 140, 0.25);
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            color: var(--color-text-primary);
+        }
+
+        .hero .title {
+            font-size: 1.5rem;
+            color: var(--color-accent-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero .subtitle {
+            font-size: 0.95rem;
+            color: var(--color-accent-primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-openings {
+            background-color: rgba(74, 124, 140, 0.08);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-accent-primary);
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+
+        .hero-openings-label {
+            margin: 0 0 0.5rem 0;
+            font-weight: 600;
+            color: var(--color-accent-primary);
+        }
+
+        .hero-openings p {
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+
+        .hero-openings-roles {
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--duration) var(--ease);
+            letter-spacing: 0.03em;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent-primary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(74, 124, 140, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-accent-primary);
+            border: 2px solid var(--color-accent-primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-accent-primary);
+            color: var(--color-white);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        /* About Section */
+        .about-bg {
+            background-color: var(--color-bg-secondary);
+        }
+
+        .about-content {
+            max-width: 800px;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-secondary);
+        }
+
+        .fact-section {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 2px solid var(--color-border);
+        }
+
+        .fact-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .achievement {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: var(--color-white);
+            border-radius: 8px;
+            border-left: 4px solid var(--color-accent-primary);
+            transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+        }
+
+        .achievement:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(74, 124, 140, 0.1);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            min-width: 40px;
+        }
+
+        .achievement-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-text p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--color-text-secondary);
+        }
+
+        /* Experience Section */
+        .experience-header-info {
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .experience-header-info p {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .experience-header-info strong {
+            color: var(--color-text-primary);
+        }
+
+        .experience-item {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: var(--color-white);
+            border-radius: 10px;
+            border-top: 4px solid var(--color-accent-primary);
+            transition: all var(--duration) var(--ease);
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .experience-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent-primary);
+            font-weight: 600;
+        }
+
+        /* Case Studies */
+        .cases-bg {
+            background-color: var(--color-bg-secondary);
+        }
+
+        .case-study {
+            background-color: var(--color-white);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all var(--duration) var(--ease);
+        }
+
+        .case-study:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .case-header {
+            background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+            color: var(--color-white);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            cursor: pointer;
+        }
+
+        .case-logo {
+            font-size: 3rem;
+            min-width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .case-title-block h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .case-title-block p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        .case-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s var(--ease);
+        }
+
+        .case-content.active {
+            max-height: 2000px;
+        }
+
+        .case-body {
+            padding: 2rem;
+        }
+
+        .case-role {
+            background-color: var(--color-bg-secondary);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--color-accent-primary);
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        .case-role strong {
+            color: var(--color-accent-primary);
+            font-style: normal;
+        }
+
+        .case-section {
+            margin-bottom: 2rem;
+        }
+
+        .case-section h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-accent-primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .case-section p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .metric {
+            background-color: var(--color-bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+
+        .case-toggle {
+            display: flex;
+            justify-content: center;
+            padding: 1.5rem 2rem;
+            background-color: var(--color-bg-secondary);
+            border-top: 1px solid var(--color-border);
+            cursor: pointer;
+            transition: background-color var(--duration) var(--ease);
+        }
+
+        .case-toggle:hover {
+            background-color: var(--color-border);
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--color-accent-primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--duration) var(--ease);
+        }
+
+        .toggle-btn:hover {
+            gap: 1rem;
+        }
+
+        .toggle-icon {
+            display: inline-block;
+            transition: transform 0.3s var(--ease);
+        }
+
+        .case-study.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: all var(--duration) var(--ease);
+            border: 1px solid var(--color-border);
+        }
+
+        .skill-category:hover {
+            border-color: var(--color-accent-primary);
+            box-shadow: 0 10px 30px rgba(74, 124, 140, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-accent-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.6rem 0;
+            color: var(--color-text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .skill-list li::before {
+            content: '✓';
+            color: var(--color-success);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Education Section */
+        .education-bg {
+            background-color: var(--color-bg-secondary);
+        }
+
+        .education-item {
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--color-accent-primary);
+            transition: all var(--duration) var(--ease);
+        }
+
+        .education-item:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+
+        .education-degree {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-school {
+            color: var(--color-accent-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-year {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .education-description {
+            color: var(--color-text-secondary);
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-bg {
+            background-color: var(--color-bg-secondary);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background-color: var(--color-white);
+            border-radius: 8px;
+            transition: all var(--duration) var(--ease);
+        }
+
+        .contact-item:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--color-accent-primary);
+            min-width: 30px;
+        }
+
+        .contact-detail h4 {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--color-text-primary);
+        }
+
+        .contact-detail p {
+            color: var(--color-text-secondary);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .contact-detail a {
+            color: var(--color-accent-primary);
+            text-decoration: none;
+            transition: color var(--duration) var(--ease);
+        }
+
+        .contact-detail a:hover {
+            color: var(--color-accent-secondary);
+            text-decoration: underline;
+        }
+
+        .open-to-roles {
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-radius: 10px;
+            border-top: 4px solid var(--color-success);
+            margin-top: 2rem;
+        }
+
+        .open-to-roles h4 {
+            color: var(--color-success);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .open-to-roles p {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-text-primary);
+            color: var(--color-white);
+            padding: 3rem 5%;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-copyright {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--color-white);
+            text-decoration: none;
+            transition: all var(--duration) var(--ease);
+        }
+
+        .social-link:hover {
+            background-color: var(--color-accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                min-height: auto;
+                padding: 3rem 5%;
+                gap: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .title {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .case-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .case-toggle {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem 5%;
+            }
+
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .nav-links {
+                gap: 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .title {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 2rem 5%;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">SB</a>
+            <ul class="nav-links">
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#experience">Опыт</a></li>
+                <li><a href="#cases">Кейсы</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#education">Образование</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>СТАНИСЛАВ БЕГУН</h1>
+            <p class="title">Project Manager / Digital Marketing Manager</p>
+            <p class="subtitle">с бэкграундом в маркетинговой аналитике</p>
+            <p>Начинал как маркетинговый аналитик и сейчас развиваюсь в роли Project Manager / Digital Marketing Manager. Я создаю аналитически обоснованные решения, которые превращают данные в конкретные результаты. Мой подход — находить скрытые возможности в цифрах и превращать их в креативные идеи, которые работают.</p>
+            
+            <div class="hero-openings">
+                <div class="hero-openings-label">🎯 Сейчас открыт к ролям:</div>
+                <p class="hero-openings-roles">Project Manager, Digital Marketing Manager / Performance Marketing</p>
+                <p>Формат: Москва, гибрид или полная удалёнка</p>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Связаться</a>
+                <a href="#cases" class="btn btn-secondary">Кейсы</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-photo" title="Профессиональное фото Станислава Бегуна">
+                <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/46666ff9-89bb-4abd-8db5-3295aa722464" alt="Станислав Бегун - Project Manager" />
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-bg" id="about">
+        <h2>Обо мне</h2>
+        
+        <div class="about-content">
+            <p>Я — Project Manager / Digital Marketing Manager с бэкграундом в маркетинговой аналитике. Работал с digital-кампаниями в недвижимости (Zillow), онлайн-образовании (Capella University) и медицине (Dental America). Привык смотреть на маркетинг через данные: важно не только, сколько было кликов и показов, но и какие каналы, креативы и аудитории реально двигают результат.</p>
+            
+            <p>Интерес к маркетингу появился на первом курсе университета, когда начал разбирать результаты digital-кампаний и работать с показателями эффективности, параллельно изучая «Маркетинг 6.0» Филиппа Котлера. С тех пор для меня маркетинг — это сочетание аналитики и креатива. Люблю придумывать нестандартные подходы и форматы, проверять их на цифрах и оставлять в работе только те решения, которые действительно работают и для бизнеса, и для аудитории.</p>
+
+            <div class="fact-section">
+                <h3>Факты обо мне</h3>
+                
+                <div class="achievement">
+                    <div class="achievement-icon">⚽</div>
+                    <div class="achievement-text">
+                        <h4>Профессиональный футболист</h4>
+                        <p>9 лет занимался профессионально футболом и стал чемпионом Москвы в составе "Торпедо Москва" 2005 г.р.</p>
+                    </div>
+                </div>
+
+                <div class="achievement">
+                    <div class="achievement-icon">🏃</div>
+                    <div class="achievement-text">
+                        <h4>Марафонец и создатель</h4>
+                        <p>Увлекаюсь бегом. В сентябре 2026 года планирую пробежать марафон и снять об этом документальный сериал.</p>
+                    </div>
+                </div>
+
+                <div class="achievement">
+                    <div class="achievement-icon">✍️</div>
+                    <div class="achievement-text">
+                        <h4>Контент и идеи</h4>
+                        <p>Запускаю lifestyle-блог с мыслями о проектном менеджменте, маркетинге и том, как я вижу мир. Люблю писать и делиться идеями.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Профессиональный опыт</h2>
+        <p class="section-subtitle">Marketing Analytics Specialist & Project Coordinator</p>
+        
+        <div class="experience-header-info">
+            <p><strong>K.Target Advertising Agency</strong> | Октябрь 2024 – Октябрь 2025</p>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-title">📊 Data Analysis & Reporting</div>
+            <ul>
+                <li>Создавал аналитические отчёты по результатам кампаний в социальных сетях, анализируя ключевые метрики: Cost per Lead, ROAS, Conversion Rate и др.</li>
+                <li>Отслеживал показатели в реальном времени: контролировал spend, количество лидов, engagement и своевременно выявлял отклонения от плана. Сокращал время реакции на отклонения с 48 часов до 4 часов для быстрых корректировок стратегии</li>
+                <li>Анализировал целевую аудиторию клиентов: выявлял демографические характеристики, поведенческие паттерны и предпочтения. Участвовал в оптимизации таргетинга, которая привела к привлечению 331K+ лидов и улучшению конверсии на 3-4.5%</li>
+                <li>Сравнивал производительность различных сегментов аудитории и типов креативов для выявления наиболее эффективных комбинаций, на основе чего инициировал перераспределение ресурсов</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-title">🎯 Campaign Strategy & Optimization</div>
+            <ul>
+                <li>Участвовал в разработке форматов и предлагал решения по изменению креативов и медиамикса для достижения целевых CPL и ROAS. Помогал достичь ROAS от 3.4 до 5.8 в различных проектах</li>
+                <li>На основе анализа данных рекомендовал стратегические корректировки для повышения эффективности кампаний</li>
+                <li>Проводил A/B тесты различных подходов к таргетингу и креативам, анализировал результаты и внедрял выигрышные варианты для масштабирования. Помогал оптимизировать частоту показов (Frequency) для снижения утомления аудитории</li>
+                <li>Инициировал перераспределение бюджета между каналами и аргументировал его перед клиентом и командой на основе данных</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-title">💬 Project Coordination & Client Management</div>
+            <ul>
+                <li>Был основным контактом для клиентов: проводил регулярные встречи, представлял результаты кампаний, объяснял метрики и давал рекомендации на основе аналитики</li>
+                <li>Создавал детальные аналитические отчёты для каждого проекта, поддерживая постоянную коммуникацию с клиентами для координации стратегии и обсуждения результатов</li>
+                <li>Контролировал сроки запуска и оптимизации кампаний, работал с рисками по дедлайнам и обеспечивал своевременное выполнение всех задач</li>
+                <li>Консолидировал фидбэк от клиента и команды и переводил его в конкретный план действий</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="cases-bg" id="cases">
+        <h2>Кейсы</h2>
+        <p class="section-subtitle">Реальные результаты работы с клиентами K.Target</p>
+
+        <!-- Zillow Case -->
+        <div class="case-study">
+            <div class="case-header" onclick="toggleCase(event)">
+                <div class="case-logo">🏠</div>
+                <div class="case-title-block">
+                    <h3>Zillow</h3>
+                    <p>Платформа недвижимости (покупка, продажа, аренда)</p>
+                </div>
+            </div>
+            <div class="case-content">
+                <div class="case-body">
+                    <div class="case-role">
+                        <strong>My Role:</strong> Marketing analytics and campaign optimization coordination (budget reallocation, creative work, channel recommendations)
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Campaign Goal</h4>
+                        <p>Привлечь людей, ищущих недвижимость (покупка, продажа, аренда) с целевой стоимостью лида не выше $5.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Key Results</h4>
+                    </div>
+
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">$0.62</div>
+                            <div class="metric-label">Cost Per Lead</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">331,248</div>
+                            <div class="metric-label">Лидов привлечено</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">5.8</div>
+                            <div class="metric-label">ROAS</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$1.19M</div>
+                            <div class="metric-label">Выручка</div>
+                        </div>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>How It Was Done</h4>
+                        <p>Проанализировал эффективность 6 медиа-каналов и выявил критический дисбаланс. Два канала демонстрировали высокую эффективность: CPC $0.55–$0.62 и CTR 1.78–3.04%. Одновременно два других канала работали убыточно с CPC $1.92–$1.96, Frequency 27–14 и CTR 0.86–1.47%, что указывало на перенасыщение одной и той же аудитории. Предложил стратегию перераспределения бюджета: заморозить неэффективные каналы и сконцентрировать ресурсы на наиболее результативных. Результат: CPL $0.62, 331K лидов, ROAS 5.8 и выручка $1.19M. Это показало, что эффективная оптимизация часто заключается в правильном распределении ресурсов между каналами, а не в создании новых подходов.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="case-toggle" onclick="toggleCase(event)">
+                <button class="toggle-btn">
+                    <span class="toggle-icon">▼</span>
+                    Развернуть детали
+                </button>
+            </div>
+        </div>
+
+        <!-- Capella University Case -->
+        <div class="case-study">
+            <div class="case-header" onclick="toggleCase(event)">
+                <div class="case-logo">🎓</div>
+                <div class="case-title-block">
+                    <h3>Capella University</h3>
+                    <p>Платформа онлайн-образования</p>
+                </div>
+            </div>
+            <div class="case-content">
+                <div class="case-body">
+                    <div class="case-role">
+                        <strong>My Role:</strong> Creative format testing and campaign optimization strategy (static vs. motion videos, audience segmentation)
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Campaign Goal</h4>
+                        <p>Привлечь студентов для онлайн-программ с целевым CPL не выше $10. Конкурентный рынок образования требовал стратегического подхода.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Key Results</h4>
+                    </div>
+
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">$7 CPL</div>
+                            <div class="metric-label">Стоимость лида</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">32,107</div>
+                            <div class="metric-label">Лидов привлечено</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3x ROI</div>
+                            <div class="metric-label">Возврат на инвестиции</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$708K</div>
+                            <div class="metric-label">Выручка</div>
+                        </div>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>How It Was Done</h4>
+                        <p>На рынке онлайн-образования стандартные подходы дают средние результаты. Проанализировал рынок конкурентов и предложил разработать стратегию, которая комбинировала static banners и motion videos — это обеспечило визуальное выделение среди конкурентов и четкое подчеркивание конкурентных преимуществ программ. Провел серию A/B тестов форматов и направил бюджет $224.7K на сегменты аудитории с наибольшей вероятностью завершения программы. Результат: CPL $7 (на 30% ниже целевого показателя $10), 32,107 привлеченных студентов, 270 поступлений с конверсией 3.39%, выручка $708K и ROI 3x. Это доказало, что правильный выбор формата контента может значительно снизить стоимость привлечения лида без ущерба качеству.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="case-toggle" onclick="toggleCase(event)">
+                <button class="toggle-btn">
+                    <span class="toggle-icon">▼</span>
+                    Развернуть детали
+                </button>
+            </div>
+        </div>
+
+        <!-- Dental America Case -->
+        <div class="case-study">
+            <div class="case-header" onclick="toggleCase(event)">
+                <div class="case-logo">🦷</div>
+                <div class="case-title-block">
+                    <h3>Dental America</h3>
+                    <p>Стоматологическое оборудование и услуги (B2B)</p>
+                </div>
+            </div>
+            <div class="case-content">
+                <div class="case-body">
+                    <div class="case-role">
+                        <strong>My Role:</strong> B2B audience targeting strategy and creative positioning (practical value messaging, cost-efficiency positioning)
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Campaign Goal</h4>
+                        <p>Привлечь B2B лиды (стоматологические клиники и врачей) для оборудования и услуг при CPL не более $100. Средняя стоимость клиента $3.1K требовала высокой точности в таргетинге.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Key Results</h4>
+                    </div>
+
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">$48.64</div>
+                            <div class="metric-label">Cost Per Lead</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3,936</div>
+                            <div class="metric-label">B2B лидов</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3.4</div>
+                            <div class="metric-label">ROAS</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$651K</div>
+                            <div class="metric-label">Выручка</div>
+                        </div>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>How It Was Done</h4>
+                        <p>Определил, что B2B маркетинг отличается от B2C тем, что клиент ценит честность и практичность больше, чем эмоциональность. Предложил подход с использованием static banners, которые демонстрировали новые продукты и подчеркивали конкурентное преимущество в цене. Никаких дорогих видеопродакшнов — только информация, которая действительно интересует врачей и владельцев клиник. Направил бюджет $191.5K на точный таргетинг: только профессионалы стоматологического сектора. Результат: CPL $48.64 (на 51% ниже целевого показателя $100), 3,936 высокозначимых B2B лидов, ROAS 3.4 и выручка $651K. Это продемонстрировало, что в B2B эффективность зависит не от красоты исполнения, а от понимания аудитории и честного подхода к коммуникации.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="case-toggle" onclick="toggleCase(event)">
+                <button class="toggle-btn">
+                    <span class="toggle-icon">▼</span>
+                    Развернуть детали
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Навыки</h2>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>📋 Project / Digital Management</h3>
+                <ul class="skill-list">
+                    <li>Project Management</li>
+                    <li>Campaign Coordination</li>
+                    <li>Stakeholder Communication</li>
+                    <li>Status Tracking & Reporting</li>
+                    <li>Risk & Timeline Management</li>
+                    <li>Team Leadership</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>🎯 Marketing & Strategy</h3>
+                <ul class="skill-list">
+                    <li>Performance Marketing</li>
+                    <li>Campaign Strategy & Creative Concepts</li>
+                    <li>Creative Format Testing (Static, Motion, UGC)</li>
+                    <li>Marketing Analytics & Optimization</li>
+                    <li>Data-Driven Insights & Recommendations</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>📊 Data & Analytics</h3>
+                <ul class="skill-list">
+                    <li>Data Visualization</li>
+                    <li>A/B Testing</li>
+                    <li>Digital Marketing Analytics</li>
+                    <li>Reporting</li>
+                    <li>Attribution Modeling</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>🛠️ Tools & Technologies</h3>
+                <ul class="skill-list">
+                    <li>Google Analytics</li>
+                    <li>Tableau</li>
+                    <li>Meta Ads (Facebook, Instagram)</li>
+                    <li>Microsoft PowerPoint</li>
+                    <li>Excel / Google Sheets</li>
+                    <li>Figma (базовые навыки)</li>
+                    <li>Canva</li>
+                    <li>AI Tools (ChatGPT, Claude, Perplexity)</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>💡 Soft Skills</h3>
+                <ul class="skill-list">
+                    <li>Communication</li>
+                    <li>Problem Solving</li>
+                    <li>Leadership</li>
+                    <li>Decision-Making</li>
+                    <li>Presentation Skills</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>🌍 Languages</h3>
+                <ul class="skill-list">
+                    <li>Русский (Родной)</li>
+                    <li>English (C1)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-bg" id="education">
+        <h2>Образование</h2>
+
+        <div class="education-item">
+            <div class="education-degree">Бакалавр</div>
+            <div class="education-school">Финансовый университет при Правительстве Российской Федерации</div>
+            <div class="education-year">2023–2027</div>
+            <div class="education-description">
+                <strong>Направление:</strong> Связи с общественностью в политике и бизнесе
+                <br><strong>Факультет:</strong> Социальных наук и массовых коммуникаций
+                <br><strong>Средний балл:</strong> 4.98
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-bg" id="contact">
+        <h2>Контакты</h2>
+        <p class="section-subtitle">Свяжитесь со мной</p>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-detail">
+                        <h4>Телефон</h4>
+                        <p><a href="tel:+79019060826">+7-901-906-08-26</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-detail">
+                        <h4>Email</h4>
+                        <p><a href="mailto:stanislavbegun005@gmail.com">stanislavbegun005@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-detail">
+                        <h4>Telegram</h4>
+                        <p><a href="https://t.me/stanislav_begun" target="_blank" rel="noopener noreferrer">@stanislav_begun</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-detail">
+                        <h4>Местоположение</h4>
+                        <p>Москва, Россия</p>
+                    </div>
+                </div>
+
+                <div class="open-to-roles">
+                    <h4>🎯 Открыт к ролям</h4>
+                    <p>Project Manager, Digital Marketing Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-copyright">
+                <p>&copy; 2026 Станислав Бегун. Все права защищены.</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://t.me/stanislav_begun" class="social-link" title="Telegram" target="_blank" rel="noopener noreferrer">TG</a>
+                <a href="mailto:stanislavbegun005@gmail.com" class="social-link" title="Email">📧</a>
+                <a href="tel:+79019060826" class="social-link" title="Phone">📞</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#contact') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Case study toggle functionality
+        function toggleCase(event) {
+            event.preventDefault();
+            const caseStudy = event.target.closest('.case-study');
+            const content = caseStudy.querySelector('.case-content');
+            caseStudy.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        // Add scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s var(--ease) forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
